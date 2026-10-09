@@ -18,17 +18,46 @@ export function BudgetDialog({
 
   return (
     <div className="sheet-backdrop" onClick={onClose} role="presentation">
-      <div className="sheet" onClick={(e) => e.stopPropagation()} role="dialog">
-        <p className="sheet-title">Presupuesto de la compra</p>
-        <p className="muted">Tope visual para no pasarte en el súper. Actual: {formatARS(value)}</p>
-        <input
-          className="text-input"
-          inputMode="numeric"
-          value={draft}
-          onChange={(e) => setDraft(e.target.value.replace(/\D/g, ''))}
-        />
+      <div
+        className="sheet"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Ajustar presupuesto"
+      >
+        <p className="sheet-title">Ajustar presupuesto</p>
+        <p className="muted">
+          Tope visual para no pasarte en el súper.
+          <br />
+          Actual: <strong>{formatARS(value)}</strong>
+        </p>
+        <div style={{ position: 'relative' }}>
+          <span
+            style={{
+              position: 'absolute',
+              left: 16,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              fontSize: 22,
+              color: 'var(--muted)',
+              pointerEvents: 'none',
+            }}
+          >
+            $
+          </span>
+          <input
+            className="text-input"
+            inputMode="numeric"
+            value={draft}
+            style={{ paddingLeft: 36 }}
+            autoFocus
+            onChange={(e) => setDraft(e.target.value.replace(/\D/g, ''))}
+          />
+        </div>
         <button
-          className="btn btn-primary"
+          className="btn btn-primary full"
           type="button"
           onClick={() => {
             const n = Number(draft)
@@ -36,7 +65,14 @@ export function BudgetDialog({
             onClose()
           }}
         >
-          Guardar
+          Guardar presupuesto
+        </button>
+        <button
+          className="btn btn-ghost full"
+          type="button"
+          onClick={onClose}
+        >
+          Cancelar
         </button>
       </div>
     </div>

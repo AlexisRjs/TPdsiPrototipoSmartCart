@@ -17,8 +17,11 @@ export function BottomNav() {
           to={tab.to}
           end={tab.to === '/'}
           className={({ isActive }) => `nav-item${isActive ? ' is-active' : ''}`}
+          aria-label={tab.label}
         >
-          <Icon name={tab.icon} size={22} />
+          <span className="nav-icon-wrap">
+            <Icon name={tab.icon} size={22} />
+          </span>
           <span>{tab.label}</span>
         </NavLink>
       ))}

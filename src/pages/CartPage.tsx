@@ -102,12 +102,20 @@ export function CartPage() {
                   <div className="row-between">
                     <span className="mini-chip">{product.storePromo?.label ?? product.aisle}</span>
                     <div className="stepper">
-                      <button type="button" onClick={() => updateQty(line.productId, -1)}>
-                        <Icon name="remove" size={16} />
+                      <button
+                        type="button"
+                        aria-label={`Quitar una unidad de ${product.name}`}
+                        onClick={() => updateQty(line.productId, -1)}
+                      >
+                        <Icon name="remove" size={18} />
                       </button>
                       <span>{line.qty}</span>
-                      <button type="button" onClick={() => updateQty(line.productId, 1)}>
-                        <Icon name="add" size={16} />
+                      <button
+                        type="button"
+                        aria-label={`Agregar una unidad de ${product.name}`}
+                        onClick={() => updateQty(line.productId, 1)}
+                      >
+                        <Icon name="add" size={18} />
                       </button>
                     </div>
                   </div>
@@ -149,8 +157,8 @@ export function CartPage() {
           <p className="eyebrow muted">Subtotal actual</p>
           <p className="numeric-lg">{formatARS(totals.due)}</p>
         </div>
-        <button className="btn btn-secondary" type="button" onClick={() => nav('/promos')}>
-          Ir a pagar
+        <button className="btn btn-primary" type="button" onClick={() => nav('/promos')}>
+          Ver promos y pagar
           <Icon name="arrow" size={18} />
         </button>
       </div>
