@@ -56,7 +56,12 @@ export function SplitPage() {
           </div>
         </section>
 
-        <button className="optimizer" type="button" onClick={applyOptimal}>
+        <button
+          className="optimizer"
+          type="button"
+          aria-label="Aplicar reparto óptimo automático"
+          onClick={applyOptimal}
+        >
           <span className="spark">
             <Icon name="spark" />
           </span>
@@ -121,18 +126,22 @@ export function SplitPage() {
           })}
         </div>
 
-        <div className={`status-card ${balanced ? 'ok' : 'warn'}`}>
-          <Icon name={balanced ? 'check' : 'warning'} />
-          <p>
-            {balanced
-              ? `Suma total coincide con el changuito (${formatARS(totals.due)}).`
-              : diff < 0
-                ? `Faltan repartir ${formatARS(Math.abs(diff))}`
-                : `Excedido por ${formatARS(diff)}`}
-          </p>
-          <button className="ghost-pill" type="button" onClick={balanceRemainder}>
-            Equilibrar
-          </button>
+        <div className={`status-card ${balanced ? 'ok' : 'warn'}`} style={{ justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <Icon name={balanced ? 'check' : 'warning'} />
+            <p>
+              {balanced
+                ? `Suma total coincide con el changuito (${formatARS(totals.due)}).`
+                : diff < 0
+                  ? `Faltan repartir ${formatARS(Math.abs(diff))}`
+                  : `Excedido por ${formatARS(diff)}`}
+            </p>
+          </div>
+          {!balanced && (
+            <button className="ghost-pill" type="button" onClick={balanceRemainder}>
+              Equilibrar
+            </button>
+          )}
         </div>
 
         <button
