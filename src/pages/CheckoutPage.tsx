@@ -55,26 +55,26 @@ export function CheckoutPage() {
           </div>
           <div className="kv">
             <span>Subtotal carrito</span>
-            <strong>{formatARS(totals.gross)}</strong>
+            <strong className="nowrap">{formatARS(totals.gross)}</strong>
           </div>
           <div className="kv save">
             <span>Descuentos y promociones</span>
-            <strong>-{formatARS(totals.storeDiscount)}</strong>
+            <strong className="nowrap">-{formatARS(totals.storeDiscount)}</strong>
           </div>
           <div className="kv save">
             <span>Reintegros de billeteras</span>
-            <strong>-{formatARS(totals.rebate)}</strong>
+            <strong className="nowrap">-{formatARS(totals.rebate)}</strong>
           </div>
           <div className="celebrate">
-            <span>Ahorraste {formatARS(totals.storeDiscount + totals.rebate)}</span>
-            <span className="chip chip-dark">-{offPct}%</span>
+            <span>Ahorraste <strong className="nowrap">{formatARS(totals.storeDiscount + totals.rebate)}</strong></span>
+            <span className="chip chip-dark nowrap">-{offPct}%</span>
           </div>
           <div className="kv total">
             <span>
               Total neto
               <small className="muted">Impuestos incluidos</small>
             </span>
-            <strong className="hero-amount">{formatARS(totals.net)}</strong>
+            <strong className="hero-amount nowrap">{formatARS(totals.net)}</strong>
           </div>
         </section>
 
@@ -82,7 +82,7 @@ export function CheckoutPage() {
           <h2>Cobro por billetera</h2>
           {WALLETS.map((wallet) => (
             <div key={wallet.id} className="wallet-row">
-              <div>
+              <div className="wallet-row-info">
                 <strong>{wallet.name}</strong>
                 <p className="muted">
                   {wallet.remainder
@@ -90,7 +90,7 @@ export function CheckoutPage() {
                     : `Reintegro ${formatARS(walletRebate(wallet, allocations[wallet.id] ?? 0))}`}
                 </p>
               </div>
-              <span className="numeric">{formatARS(allocations[wallet.id] ?? 0)}</span>
+              <span className="numeric nowrap">{formatARS(allocations[wallet.id] ?? 0)}</span>
             </div>
           ))}
         </section>

@@ -6,9 +6,9 @@ export const STORE = {
 }
 
 export const USER = {
-  name: 'Ana López',
-  handle: '@ana.lopez',
-  initials: 'AL',
+  name: 'Andrés Ricagno',
+  handle: '@andres.ricagno',
+  initials: 'AR',
 }
 
 export const DEFAULT_BUDGET = 30_000
