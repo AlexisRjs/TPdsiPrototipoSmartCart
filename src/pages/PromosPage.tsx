@@ -27,7 +27,7 @@ export function PromosPage() {
       <div className="page page-with-sticky">
         <section className="card dark-hero">
           <div className="row-between">
-            <span className="count-pill">{applied.length} promos activas</span>
+            <span className="chip chip-lime">{applied.length} promos activas</span>
           </div>
           <h2 className="hero-title">¡Estás ahorrando {formatARS(totals.storeDiscount)}!</h2>
           <div className="compare">
