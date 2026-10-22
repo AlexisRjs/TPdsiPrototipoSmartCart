@@ -15,8 +15,8 @@ export function SplitPage() {
 
   return (
     <>
-      <Header title="Reparto óptimo" backTo="/promos" />
-      <div className="page">
+      <Header title="Billeteras y ahorro" />
+      <div className="page page-wallets">
         <section className="card">
           <div className="row-between">
             <span className="muted inline">
@@ -78,31 +78,31 @@ export function SplitPage() {
             const rebate = walletRebate(wallet, amount)
             const maxAt = amountToMaxCap(wallet)
             return (
-              <article key={wallet.id} className="card">
-                <div className="row-between">
-                  <div>
+              <article key={wallet.id} className="card wallet-card">
+                <div className="wallet-card-header">
+                  <div className="wallet-card-info">
                     <h3>{wallet.name}</h3>
-                    <div className="inline wrap">
+                    <div className="wallet-card-tags">
                       <span className="mini-chip lime">
                         {wallet.remainder
                           ? 'Saldo libre'
                           : `${Math.round(wallet.rebateRate * 100)}% reintegro`}
                       </span>
-                      <span className="muted">
+                      <span className="muted nowrap">
                         {wallet.remainder
                           ? 'Absorbe el resto'
                           : `Tope disp: ${formatARS(wallet.remainingCap)}`}
                       </span>
                     </div>
                   </div>
-                  <div className="align-right">
+                  <div className="wallet-card-savings">
                     <p className="eyebrow">Ahorro activo</p>
                     <p className={rebate ? 'save numeric' : 'muted numeric'}>
                       {rebate ? `+${formatARS(rebate)}` : formatARS(0)}
                     </p>
                   </div>
                 </div>
-                <div className="row-between">
+                <div className="row-between assigned-row">
                   <span className="muted">Monto asignado</span>
                   <span className="amount-pill">${formatARSPlain(amount)}</span>
                 </div>
@@ -126,8 +126,8 @@ export function SplitPage() {
           })}
         </div>
 
-        <div className={`status-card ${balanced ? 'ok' : 'warn'}`} style={{ justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div className={`status-card ${balanced ? 'ok' : 'warn'}`}>
+          <div className="status-card-info">
             <Icon name={balanced ? 'check' : 'warning'} />
             <p>
               {balanced
