@@ -9,7 +9,9 @@ import { AppStateProvider } from './store/AppState'
 
 function Shell() {
   const { pathname } = useLocation()
-  const stacked = pathname === '/billeteras' || pathname === '/pagar'
+  // Only checkout flow (/pagar) hides bottom nav as a focused modal screen;
+  // /billeteras is a primary tab in the bottom bar.
+  const stacked = pathname === '/pagar'
 
   return (
     <div className="device">
