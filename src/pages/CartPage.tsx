@@ -20,15 +20,11 @@ export function CartPage() {
   return (
     <>
       <Header title="Carrito" />
-      <div className="page">
-        <div className="row-between">
-          <span className="chip">
+      <div className="page page-cart">
+        <div className="store-badge-row">
+          <span className="chip nowrap">
             <Icon name="store" size={16} />
             {STORE.name}
-          </span>
-          <span className="chip chip-live">
-            <span className="dot" />
-            En vivo
           </span>
         </div>
 
@@ -36,40 +32,40 @@ export function CartPage() {
           <div className="row-between">
             <div>
               <p className="eyebrow muted">Total a pagar</p>
-              <p className="hero-amount">
+              <p className="hero-amount nowrap">
                 {formatARS(totals.due)}
                 <span className="currency">ARS</span>
               </p>
             </div>
             <div className="align-right">
               <p className="eyebrow muted">Presupuesto</p>
-              <p className="numeric">{formatARS(budget)}</p>
+              <p className="numeric nowrap">{formatARS(budget)}</p>
             </div>
           </div>
           <div className="meter-copy">
-            <span>
+            <span className="nowrap">
               {formatARS(totals.due)} de {formatARS(budget)}
             </span>
-            <strong>{totals.budgetPct}%</strong>
+            <strong className="nowrap">{totals.budgetPct}%</strong>
           </div>
           <div className="meter">
             <div style={{ width: `${totals.budgetPct}%` }} />
           </div>
           <div className="row-between wrap">
-            <span className="chip chip-soft">
+            <span className="chip chip-soft nowrap">
               <Icon name="check" size={16} />
               Te quedan {formatARS(totals.remainingBudget)}
             </span>
-            <button className="text-btn" type="button" onClick={() => setBudgetOpen(true)}>
+            <button className="text-btn nowrap" type="button" onClick={() => setBudgetOpen(true)}>
               Ajustar <Icon name="tune" size={16} />
             </button>
           </div>
         </section>
 
-        <div className="row-between">
+        <div className="row-between section-heading">
           <h2>
             Artículos
-            <span className="count-pill">
+            <span className="count-pill nowrap">
               {totals.items} ítems ({totals.units} un.)
             </span>
           </h2>
@@ -83,7 +79,7 @@ export function CartPage() {
               <article key={line.productId} className="card item-card">
                 <ProductTile product={product} />
                 <div className="item-body">
-                  <div className="row-between">
+                  <div className="row-between item-title-row">
                     <h3>{product.name}</h3>
                     <button
                       className="icon-btn ghost"
@@ -95,11 +91,11 @@ export function CartPage() {
                     </button>
                   </div>
                   <p className="price-line">
-                    <strong>{formatARS(lineNet(product, line.qty))}</strong>
-                    <span>({formatARS(product.unitPrice)} c/u)</span>
-                    {discount > 0 ? <span className="save">-{formatARS(discount)}</span> : null}
+                    <strong className="nowrap">{formatARS(lineNet(product, line.qty))}</strong>
+                    <span className="nowrap">({formatARS(product.unitPrice)} c/u)</span>
+                    {discount > 0 ? <span className="save nowrap">-{formatARS(discount)}</span> : null}
                   </p>
-                  <div className="row-between">
+                  <div className="row-between item-footer-row">
                     <span className="mini-chip">{product.storePromo?.label ?? product.aisle}</span>
                     <div className="stepper">
                       <button
@@ -129,7 +125,7 @@ export function CartPage() {
           <span className="insight-icon">
             <Icon name="savings" />
           </span>
-          <span>
+          <span className="insight-copy">
             <span className="eyebrow">Optimización Smart</span>
             <span>
               Ahorrás {formatARS(totals.storeDiscount + totals.rebate)} entre promos y billeteras
@@ -153,11 +149,11 @@ export function CartPage() {
       </button>
 
       <div className="checkout-bar">
-        <div>
+        <div className="checkout-bar-info">
           <p className="eyebrow muted">Subtotal actual</p>
-          <p className="numeric-lg">{formatARS(totals.due)}</p>
+          <p className="numeric-lg nowrap">{formatARS(totals.due)}</p>
         </div>
-        <button className="btn btn-primary" type="button" onClick={() => nav('/promos')}>
+        <button className="btn btn-primary nowrap" type="button" onClick={() => nav('/promos')}>
           Ver promos y pagar
           <Icon name="arrow" size={18} />
         </button>
