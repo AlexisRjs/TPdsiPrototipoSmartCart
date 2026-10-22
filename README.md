@@ -96,8 +96,10 @@ flowchart TD
     CK_PAY -->|Procesando...| CK_DONE
     CK_DONE -->|Volver| NAV_CART
 
-    %% Interacciones Cuenta
-    NAV_ACCOUNT --> A_USER
+    %% Interacciones Cuenta y Validación de Tarjetas del Usuario
+    NAV_ACCOUNT -->|1-Tap Pestaña Usuario| A_USER
+    A_USER -.->|Valida topes de tarjetas (Modo / Cuenta DNI)| NAV_PROMOS
+    A_USER -.->|Aporta billeteras vinculadas para split| NAV_WALLETS
     A_RESET -.->|Reset estado inicial| NAV_CART
 ```
 

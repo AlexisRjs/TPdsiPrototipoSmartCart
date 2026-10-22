@@ -254,22 +254,26 @@
         <!-- 4. Overlays Promos: Reveal Góndola 4 -->
         <path d="M 450,230 V 122" fill="none" stroke="#d97706" stroke-width="1.2" marker-end="url(#arrow-amber)"/>
 
-        <!-- 5. Reparto automático en Billeteras (Acción interna / auxiliar) -->
-        <line x1="740" y1="330" x2="740" y2="408" stroke="#475569" stroke-width="1.2" marker-end="url(#arrow)"/>
-        <line x1="740" y1="410" x2="740" y2="338" stroke="#006c49" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-emerald)"/>
+        <!-- 5. Perfil Andrés Ricagno -> Promociones y Topes (Valida topes con tarjetas del usuario) -->
+        <path d="M 660,420 V 365 Q 660,355 650,355 H 458 Q 450,355 450,347 V 332"
+              fill="none" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arrow-blue)"/>
 
-        <!-- 6. Pagar -> Tótem Salida -->
-        <line x1="1025" y1="330" x2="1025" y2="408" stroke="#006c49" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
+        <!-- 6. Perfil Andrés Ricagno -> División de Pagos (Billeteras vinculadas para split) -->
+        <line x1="740" y1="420" x2="740" y2="332" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#arrow-blue)"/>
 
         <!-- 7. Conexiones BottomNav a las Pestañas -->
         <!-- BottomNav Tab Carrito -> Carrito -->
-        <line x1="165" y1="590" x2="165" y2="338" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <line x1="185" y1="620" x2="185" y2="332" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
         <!-- BottomNav Tab Promos -> Promos -->
-        <line x1="450" y1="590" x2="450" y2="338" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <line x1="375" y1="620" x2="375" y2="332" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
         <!-- BottomNav Tab Billeteras -> Billeteras -->
-        <line x1="710" y1="590" x2="710" y2="338" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
-        <!-- BottomNav Tab Cuenta -> Vista Cuenta -->
-        <line x1="450" y1="620" x2="450" y2="502" stroke="#2563eb" stroke-width="1.2" marker-end="url(#arrow-blue)"/>
+        <path d="M 565,620 V 385 Q 565,375 575,375 H 635 Q 645,375 648,367 V 332"
+              fill="none" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <!-- BottomNav Tab Andrés Ricagno -> Perfil Andrés Ricagno -->
+        <line x1="755" y1="620" x2="755" y2="507" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+        <!-- 8. Pagar -> Tótem Salida -->
+        <line x1="1025" y1="330" x2="1025" y2="408" stroke="#006c49" stroke-width="1.5" marker-end="url(#arrow-emerald)"/>
 
         <!-- ========================================== -->
         <!-- MÁSCARAS Y ETIQUETAS DE CONECTORES         -->
@@ -302,9 +306,17 @@
         <rect x="368" y="155" width="155" height="14" rx="2" fill="#ffffff" stroke="#d97706" stroke-width="0.8"/>
         <text x="445.5" y="165" fill="#d97706" font-size="7" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">"VER LO QUE TE ESTÁS PERDIENDO"</text>
 
-        <!-- Label: Algoritmo óptimo -->
-        <rect x="670" y="360" width="140" height="14" rx="2" fill="#ffffff"/>
-        <text x="740" y="370" fill="#006c49" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle">REPARTO ÓPTIMO 1-CLICK</text>
+        <!-- Label: Valida topes con tarjetas del usuario -->
+        <rect x="470" y="347" width="160" height="15" rx="2" fill="#ffffff" stroke="#2563eb" stroke-width="0.8"/>
+        <text x="550" y="357.5" fill="#2563eb" font-size="7" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">VALIDA TOPES CON TARJETAS</text>
+
+        <!-- Label: Billeteras vinculadas -->
+        <rect x="660" y="375" width="160" height="15" rx="2" fill="#ffffff" stroke="#2563eb" stroke-width="0.8"/>
+        <text x="740" y="385.5" fill="#2563eb" font-size="7" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">BILLETERAS VINCULADAS</text>
+
+        <!-- Label: Pestaña usuario -->
+        <rect x="690" y="555" width="130" height="15" rx="2" fill="#ffffff" stroke="#2563eb" stroke-width="0.8"/>
+        <text x="755" y="565.5" fill="#2563eb" font-size="7" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">PERFIL USUARIO (1-TAP)</text>
 
         <!-- Label: QR Tótem -->
         <rect x="970" y="360" width="110" height="14" rx="2" fill="#ffffff"/>
@@ -414,34 +426,35 @@
         <!-- NODOS: ACCIONES & SOPORTE (Y: 410 a 480)   -->
         <!-- ========================================== -->
 
-        <!-- VISTA 5: CUENTA -->
-        <g id="node-account">
-          <rect x="350" y="420" width="200" height="80" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
-          <rect x="360" y="428" width="85" height="12" rx="2" fill="rgba(37, 99, 235, 0.08)"/>
-          <text x="402.5" y="437" fill="#2563eb" font-size="6.5" font-family="'Geist Mono', monospace" text-anchor="middle" font-weight="600">VISTA · /cuenta</text>
-          <text x="450" y="458" fill="#0f172a" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Perfil Andrés Ricagno</text>
-          <text x="450" y="473" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Topes mensuales · Billeteras activas</text>
-          <text x="450" y="487" fill="#ef4444" font-size="7.5" font-family="'Geist Mono', monospace" text-anchor="middle">Botón "Reiniciar demostración"</text>
-        </g>
-
         <!-- Soporte: Algoritmo de Reparto Óptimo -->
         <g id="node-algo">
-          <rect x="640" y="415" width="200" height="70" rx="6" fill="#f0fdf4" stroke="#006c49" stroke-width="1"/>
-          <rect x="648" y="423" width="48" height="11" rx="2" fill="rgba(0, 108, 73, 0.12)"/>
-          <text x="672" y="431.5" fill="#006c49" font-size="6.5" font-family="'Geist Mono', monospace" text-anchor="middle" font-weight="600">LÓGICA</text>
-          <text x="740" y="452" fill="#0f172a" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Reparto Óptimo y Sliders</text>
-          <text x="740" y="468" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Llena Modo 30% ($10k tope) ➔</text>
-          <text x="740" y="479" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Cuenta DNI 20% ($6k tope) ➔ Saldo MP</text>
+          <rect x="360" y="420" width="200" height="85" rx="6" fill="#f0fdf4" stroke="#006c49" stroke-width="1"/>
+          <rect x="368" y="428" width="48" height="11" rx="2" fill="rgba(0, 108, 73, 0.12)"/>
+          <text x="392" y="436.5" fill="#006c49" font-size="6.5" font-family="'Geist Mono', monospace" text-anchor="middle" font-weight="600">LÓGICA</text>
+          <text x="460" y="456" fill="#0f172a" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Reparto Óptimo y Sliders</text>
+          <text x="460" y="472" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Llena Modo 30% ($10k tope) ➔</text>
+          <text x="460" y="484" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Cuenta DNI 20% ($6k tope) ➔ Saldo MP</text>
+        </g>
+
+        <!-- VISTA 5: CUENTA (PERFIL ANDRÉS RICAGNO) -->
+        <g id="node-account">
+          <rect x="640" y="420" width="200" height="85" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+          <rect x="650" y="428" width="95" height="13" rx="2" fill="rgba(37, 99, 235, 0.08)"/>
+          <text x="697.5" y="437.5" fill="#2563eb" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" font-weight="600">USER · /cuenta</text>
+          <text x="740" y="458" fill="#0f172a" font-size="12.5" font-weight="700" font-family="'Geist', sans-serif" text-anchor="middle">Perfil Andrés Ricagno</text>
+          <text x="740" y="474" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Tarjetas cargadas · Modo, DNI, MP</text>
+          <text x="740" y="489" fill="#2563eb" font-size="7.5" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">Nutre promos y billeteras vinculadas</text>
+          <rect x="650" y="498" width="180" height="3" rx="1.5" fill="#2563eb"/>
         </g>
 
         <!-- Soporte: Tótem de Salida -->
         <g id="node-totem">
-          <rect x="930" y="415" width="190" height="70" rx="6" fill="#ffffff" stroke="#006c49" stroke-width="1.2"/>
-          <rect x="938" y="423" width="44" height="11" rx="2" fill="rgba(0, 108, 73, 0.08)"/>
-          <text x="960" y="431.5" fill="#006c49" font-size="6.5" font-family="'Geist Mono', monospace" text-anchor="middle" font-weight="600">SALIDA</text>
-          <text x="1025" y="452" fill="#0f172a" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Tótem Físico Fast-Track</text>
-          <text x="1025" y="468" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Escaneo de QR sin cajero humano</text>
-          <text x="1025" y="479" fill="#006c49" font-size="7.5" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">Muestra ticket digital pagado</text>
+          <rect x="930" y="420" width="190" height="85" rx="6" fill="#ffffff" stroke="#006c49" stroke-width="1.2"/>
+          <rect x="938" y="428" width="44" height="11" rx="2" fill="rgba(0, 108, 73, 0.08)"/>
+          <text x="960" y="436.5" fill="#006c49" font-size="6.5" font-family="'Geist Mono', monospace" text-anchor="middle" font-weight="600">SALIDA</text>
+          <text x="1025" y="456" fill="#0f172a" font-size="11" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Tótem Físico Fast-Track</text>
+          <text x="1025" y="472" fill="#475569" font-size="8" font-family="'Geist', sans-serif" text-anchor="middle">Escaneo de QR sin cajero humano</text>
+          <text x="1025" y="485" fill="#006c49" font-size="7.5" font-weight="600" font-family="'Geist Mono', monospace" text-anchor="middle">Muestra ticket digital pagado</text>
         </g>
 
         <!-- ========================================== -->
@@ -466,9 +479,9 @@
           <rect x="480" y="620" width="170" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
           <text x="565" y="642" fill="#0f172a" font-size="10" font-weight="500" font-family="'Geist', sans-serif" text-anchor="middle">💳 Billeteras (3)</text>
 
-          <!-- Tab 4: Cuenta -->
-          <rect x="670" y="620" width="170" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-          <text x="755" y="642" fill="#0f172a" font-size="10" font-weight="500" font-family="'Geist', sans-serif" text-anchor="middle">👤 Andrés Ricagno</text>
+          <!-- Tab 4: Andrés Ricagno (User) -->
+          <rect x="670" y="620" width="170" height="36" rx="6" fill="rgba(37, 99, 235, 0.06)" stroke="#2563eb" stroke-width="1.2"/>
+          <text x="755" y="642" fill="#2563eb" font-size="10" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">👤 Andrés Ricagno (User)</text>
 
           <!-- Exclusión de Checkout -->
           <g id="nav-exclusion">
@@ -514,13 +527,13 @@
       <div class="card">
         <div class="card-header">
           <div class="card-dot blue"></div>
-          <h3>Navegación Persistente vs Aislada</h3>
+          <h3>Usuario & Validación de Tarjetas</h3>
         </div>
-        <p class="eyebrow">EXPERIENCIA DE USUARIO (UX)</p>
+        <p class="eyebrow">DATOS QUE NUTREN EL FLUJO</p>
         <ul>
-          <li><strong>BottomNav de 4 Pestañas:</strong> Conexión inmediata en 1-tap entre Carrito, Promos, Billeteras y Cuenta.</li>
-          <li><strong>Aislamiento en Checkout:</strong> Al entrar a <code>/pagar</code>, la barra inferior se oculta deliberadamente para proteger el pago.</li>
-          <li><strong>Retorno Seguro:</strong> El botón <em>"Volver al carrito"</em> permite corregir ítems cancelando el QR de forma limpia.</li>
+          <li><strong>Perfil Andrés Ricagno:</strong> Se accede desde la pestaña de usuario en la BottomNav (<code>/cuenta</code>).</li>
+          <li><strong>Valida Promociones & Topes:</strong> Las promociones bancarias (Modo 30%, Cuenta DNI 20%) y sus topes mensuales se validan con las tarjetas cargadas por Andrés.</li>
+          <li><strong>Alimenta División de Pagos:</strong> Aporta los medios de pago vinculados al usuario para permitir el reparto inteligente y sliders interactivos.</li>
         </ul>
       </div>
     </div>
