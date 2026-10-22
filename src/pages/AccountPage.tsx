@@ -34,10 +34,10 @@ export function AccountPage() {
           <div className="row-between">
             <div>
               <p className="eyebrow">Presupuesto de hoy</p>
-              <p className="numeric-lg">{formatARS(budget)}</p>
-              <p className="muted">Consumido {formatARS(totals.due)}</p>
+              <p className="numeric-lg nowrap">{formatARS(budget)}</p>
+              <p className="muted nowrap">Consumido {formatARS(totals.due)}</p>
             </div>
-            <button className="btn btn-ghost compact" type="button" onClick={() => setOpen(true)}>
+            <button className="btn btn-ghost compact nowrap" type="button" onClick={() => setOpen(true)}>
               <Icon name="tune" size={16} />
               Ajustar
             </button>
@@ -48,10 +48,10 @@ export function AccountPage() {
         <div className="stack">
           {WALLETS.map((w) => (
             <article key={w.id} className="card">
-              <div className="row-between">
+              <div className="row-between wallet-item-row">
                 <strong>{w.name}</strong>
-                <span className="mini-chip lime">
-                  {w.remainder ? 'Saldo libre' : `${Math.round(w.rebateRate * 100)}% tope ${formatARS(w.remainingCap)}`}
+                <span className="mini-chip lime nowrap">
+                  {w.remainder ? 'Saldo libre' : `${Math.round(w.rebateRate * 100)}% · Tope ${formatARS(w.remainingCap)}`}
                 </span>
               </div>
             </article>
