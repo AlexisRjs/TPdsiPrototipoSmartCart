@@ -6,6 +6,8 @@
 
 ## 🗺️ Mapa de Flujo y Navegaciones
 
+> 🎨 **Diagrama Gráfico Editorial (Diagram Design):** Podés abrir el diagrama visual de alta resolución en [diagrama-navegacion.html](diagrama-navegacion.html) o visualizarlo en el navegador local en [http://localhost:5173/diagrama-navegacion.html](http://localhost:5173/diagrama-navegacion.html).
+
 El siguiente diagrama detalla la arquitectura de información, las opciones de navegación directa mediante la barra inferior (*BottomNav*) y el recorrido guiado de compra (*Happy Path*):
 
 ```mermaid
