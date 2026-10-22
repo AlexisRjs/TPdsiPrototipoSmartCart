@@ -3,10 +3,9 @@ import { Icon } from './Icon'
 import { USER } from '../data/seed'
 
 export function Header({
-  title,
   backTo,
 }: {
-  title: string
+  title?: string
   backTo?: string
 }) {
   return (
@@ -21,8 +20,7 @@ export function Header({
           SC
         </div>
         <div className="brand-copy">
-          <span className="eyebrow">SmartCart</span>
-          <h1>{title}</h1>
+          <h1 className="brand-title">SMARTCART</h1>
         </div>
       </div>
       <Link to="/cuenta" className="avatar" aria-label="Cuenta">
